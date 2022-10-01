@@ -22,28 +22,39 @@ var startBtn = document.querySelector(".start");
 function start(){
 document.getElementById("instruction").className = "hidden";
 document.getElementById("quiz").className = "visible";
+setTime();
+}
+
+function quizEnd() {
+    document.getElementById("quiz").className = "hidden";
+    document.getElementById("allDone").className = "visible";
+}
+function viewScores() {
+    document.getElementById("allDone").className = "hidden";
+    document.getElementById("highScore").className = "visible";
+}
+
+
+function allDone() {
+    // timeEl.textContent = " ";
+    document.getElementById("allDone").className = "visible";
+    document.getElementById("quiz").className = "visible";
 }
 
 
 function result() {
-var element = event.target;
-if (element.matches(".result")) {
-    var category = element.getAttribute("value");
-    console.log(category)
-    if (category == "correctAnswer") {
-        element.setAttribute("result", "Correct!")
-    } else {
-        element.texContent = "Wrong!"
+    var element = event.target;
+    if (element.matches(".result")) {
+        var category = element.getAttribute("value");
+        console.log(category)
+        if (category == "correctAnswer") {
+            element.setAttribute("result", "Correct!")
+        } else {
+            element.texContent = "Wrong!"
+        }
     }
-}
-}
+    }
 
-function allDone() {
-    timeEl.textContent = " ";
-
-}
-
-setTime();
 
 // use addEventListener to setup click functions for starting the quiz to the start quiz button
 
@@ -55,22 +66,24 @@ setTime();
 //create a interval timer couting down
 var timeEl = document.querySelector(".time");
 
-var timerEl = document.getElementById("timer");
+// var timerEl = document.getElementById("timer");
 
-var secondLeft = 60;
+var secondLeft = 5;
+
 
 function setTime() {
     var timerInterval = setInterval(function() {
         secondLeft--;
         timeEl.textContent = "Time: " + secondLeft;
-
         if (secondLeft === 0) {
-            allDone();
             clearInterval(timerInterval);
-            submitAnswer();
+            allDone();
         }
     },1000);
 }
+
+
+setTime();
     //when timer hits 0, end quiz
         //show user "All Done!" on screen
         //show the final score 

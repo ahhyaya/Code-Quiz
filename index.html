@@ -23,7 +23,10 @@
 
         <div><a class ="viewHighScore" style = "text-align: left;">View High Scores</a></div>
         
-        <div id ="timer"></div><a class ="time" style = "text-align: right;">Timer: </a></div>
+        <a class ="time" style = "text-align: right;"></a>
+        <div id ="timer"></div>
+    <!-- <div type = "time" onclick="setTime()"></div> -->
+    </div>
         
         </header>
 
@@ -68,7 +71,7 @@
         </div>
         
         <!-- after quiz -->
-        <div class = "hidden">
+        <div class = "hidden" id = "allDone">
             <!-- h2 for "All done"  ID quziComplete -->
             <h2 class = "alldone">All done!</h2>
             <!-- textarea to show final score and input initials ID quziComplete-->
@@ -82,7 +85,7 @@
 
 
         <!-- high score -->
-        <div class = "hidden">
+        <div class = "hidden"  id = "viewHighScore">
             <!-- h2 "High score" -->
             <h2 class="highScore">High Scores</h2>
             <!-- score ares -->
