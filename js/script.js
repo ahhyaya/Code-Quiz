@@ -1,7 +1,15 @@
 //declare variables to use via querySelector
 //declare a string array to store all quiz questions
-//declare a string array to store all answers
+var quizQuestions = [
+    {number: "1", question:"What is the use of isNaN function?",
+     number: "2", question:"What is Javascript Objects?",
+     number: "3", question:"What is local storage?",
+]
 
+//declare a string array to store all answers
+var answers = [
+    {number: "1", answers: "IDK", "hahaha","correct"},
+]
 
 // use addEventListener to setup click functions for starting the quiz to the start quiz button
 
