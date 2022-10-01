@@ -7,6 +7,7 @@ function result() {
 var element = event.target;
 if (element.matches(".result")) {
     var category = element.getAttribute("value");
+    console.log(category)
     if (category == "correctAnswer") {
         element.setAttribute("result", "Correct!")
     } else {
@@ -15,6 +16,12 @@ if (element.matches(".result")) {
 }
 }
 
+function allDone() {
+    timeEl.textContent = " ";
+
+}
+
+setTime();
 
 // use addEventListener to setup click functions for starting the quiz to the start quiz button
 
@@ -24,6 +31,24 @@ if (element.matches(".result")) {
     //Go back and Clear high score function
 
 //create a interval timer couting down
+var timeEl = document.querySelector(".time");
+
+var timerEl = document.getElementById("timer");
+
+var secondLeft = 60;
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+        secondLeft--;
+        timeEl.textContent = "Time: " + secondLeft;
+
+        if (secondLeft === 0) {
+            allDone();
+        } else {
+            submitAnswer();
+        }
+    },1000);
+}
     //when timer hits 0, end quiz
         //show user "All Done!" on screen
         //show the final score 
