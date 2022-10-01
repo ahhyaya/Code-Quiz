@@ -20,6 +20,7 @@
 
         <!-- timer -->
         <header class = "header">
+
         <div><a class ="viewHighScore" style = "text-align: left;">View High Scores</a></div>
         
         <div id ="timer"></div><a class ="time" style = "text-align: right;">Timer: </a></div>
@@ -27,8 +28,9 @@
         </header>
 
         <!-- 1st page - start -->
-        <!-- <div class = "hidden"> -->
+        <div class = "visible" id = "instruction">
         <!-- h1 for quiz title ID startPage-->
+        <div>
         <h1>Coding quiz challenge</h1>
         <!-- quiz instractions ID startPage--->
         <div class = "startPage">
@@ -38,11 +40,11 @@
         <!-- button to start quiz ID startPage--->
         <button class = "start">Start Quiz</button>
         </div>
-        
+         </div>
 
         <!-- quiz part -->
 
-            <div class = "hidden">
+            <div class = "hidden" id = "quiz">
             <h2>JavaScript is ______ Language.</h2><br>
             <form >
                 <button type="options" name="correctAnswer" value="Scripting" id = "optionsButton"> Scripting</button><br>

@@ -1,16 +1,29 @@
 //declare variables to use via querySelector
 //declare a string array to store all quiz questions
 //declare a string array to store all answers
+var startBtn = document.querySelector(".start");
 
-function visibel() {
-    const div = document.querySelector('div');
-    div.classList.remove('hidden')
+// function visibel() {
+//     const div = document.querySelector('div');
+//     div.classList.remove('hidden')
+// }
+
+// function hidden() {
+//     const div = document.querySelector('div');
+//     div.classList.add('hidden')
+// }
+
+// document.getElementById("visibility").addEventListener("click", function hidden() {
+//     const div = document.querySelector('div');
+//     div.classList.add('hidden')
+// });
+
+// document.getElementById("instruction").className = "visible";
+function start(){
+document.getElementById("instruction").className = "hidden";
+document.getElementById("quiz").className = "visible";
 }
 
-function hidden() {
-    const div = document.querySelector('div');
-    div.classList.add('hidden')
-}
 
 function result() {
 var element = event.target;
@@ -98,3 +111,4 @@ function setTime() {
 //
 
 
+document.addEventListener("click", start);
