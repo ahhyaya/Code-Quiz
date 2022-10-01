@@ -36,3 +36,8 @@ body {
     border-radius: 10px;
     background-color: rgb(242, 153, 0);
   }
+
+  #optionsButton {
+    
+    width: 200px;
+  }

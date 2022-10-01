@@ -18,6 +18,7 @@
     <!-- a container -->
 
         <!-- 1st page - start -->
+        <div class = hidden>
         <!-- h1 for quiz title ID startPage-->
         <h1>Coding quiz challenge</h1>
         <!-- quiz instractions ID startPage--->
@@ -30,20 +31,20 @@
         <div id ="timer"></div>
         <!-- button to start quiz ID startPage--->
         <button class = "start">Start Quiz</button>
-
+        </div>
 
         <!-- quiz part -->
 
-        <div class = hidden>
+        
             <h2>JavaScript is ______ Language.</h2><br>
             <form >
-                <button type="options" name="correctAnswer" value="Scripting"> Scripting</button><br>
-                <button type="options" name="choice" value="Programming"> Programming</button><br>
-                <button type="options" name="choice" value="Application"> Application</button><br>
-                <button type="options" name="choice" value="None of These"> None of These</button><br>
+                <button type="options" name="correctAnswer" value="Scripting" id = "optionsButton"> Scripting</button><br>
+                <button type="options" name="choice" value="Programming" id = "optionsButton"> Programming</button><br>
+                <button type="options" name="choice" value="Application" id = "optionsButton"> Application</button><br>
+                <button type="options" name="choice" value="None of These" id = "optionsButton"> None of These</button><br>
             </form>
             <br>
-            <button onclick="submitAnswer()">Submit Answer</button>
+            <!-- <button onclick="submitAnswer()">Submit Answer</button> -->
          
             <!-- h2 for quiz questions ID quiz-->
             <!-- <h2 class = "questions">questions</h2> -->
