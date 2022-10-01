@@ -44,7 +44,7 @@ function setTime() {
 
         if (secondLeft === 0) {
             allDone();
-        } else {
+            clearInterval(timerInterval);
             submitAnswer();
         }
     },1000);

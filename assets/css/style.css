@@ -68,3 +68,8 @@ body {
   .highScoreOptions {
     margin-top: 40px;
   }
+
+  .time {
+   font-size: 13px;
+   margin-right: 15px;
+  }
