@@ -1,5 +1,5 @@
 body {
-    background-color: #eff5f8
+    background-color: #fcf2fb
   }
 
 .hidden {
@@ -14,4 +14,25 @@ body {
     border: 2px double;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 50px;
+  }
+
+  h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  h2 {
+    
+  }
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  button {
+    height: 35px;
+    width :auto;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgb(242, 153, 0);
   }
