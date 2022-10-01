@@ -1,15 +1,20 @@
 //declare variables to use via querySelector
 //declare a string array to store all quiz questions
-var quizQuestions = [
-    {number: "1", question:"What is the use of isNaN function?",
-     number: "2", question:"What is Javascript Objects?",
-     number: "3", question:"What is local storage?",
-]
-
 //declare a string array to store all answers
-var answers = [
-    {number: "1", answers: "IDK", "hahaha","correct"},
-]
+
+
+function result() {
+var element = event.target;
+if (element.matches(".result")) {
+    var category = element.getAttribute("value");
+    if (category == "correctAnswer") {
+        element.setAttribute("result", "Correct!")
+    } else {
+        element.texContent = "Wrong!"
+    }
+}
+}
+
 
 // use addEventListener to setup click functions for starting the quiz to the start quiz button
 
@@ -34,6 +39,20 @@ var answers = [
                     //if answer is true total score +1
                     //if answer is wrong total time decrese -15
         //setup a function to show if the answer is correct
+        var submitAnswer = function() {
+            var options = document.getElementsByName('choice');
+            var val = "";
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].clicked) {
+                    val = options[i].ariaValueMax;
+                    break;
+                }
+            }
+
+            if (val == "answers") {
+                result();
+            }
+        }
     //if user finish the quiz before time counts to 0
         //*show user "All Done!" on screen
         //*show the final score 
