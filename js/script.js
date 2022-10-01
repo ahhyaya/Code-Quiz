@@ -2,6 +2,15 @@
 //declare a string array to store all quiz questions
 //declare a string array to store all answers
 
+function visibel() {
+    const div = document.querySelector('div');
+    div.classList.remove('hidden')
+}
+
+function hidden() {
+    const div = document.querySelector('div');
+    div.classList.add('hidden')
+}
 
 function result() {
 var element = event.target;
