@@ -51,13 +51,21 @@
     <!-- quiz part -->
 
     <div class="hidden" id="quiz">
-        <h2>JavaScript is ______ Language.</h2><br>
+        <div id="question"></div>
+        <div id="choices">
+            <button class="choice" id="1" onclick="checkAnswer('1')"></button>
+            <button class="choice" id="2" onclick="checkAnswer('2')"></button>
+            <button class="choice" id="3" onclick="checkAnswer('3')"></button>
+            <button class="choice" id="4" onclick="checkAnswer('4')"></button>
+        </div>
+        <div id="progress"></div>
+        <!-- <h2>JavaScript is ______ Language.</h2><br>
         <form>
             <button type="options" name="correctAnswer" value="Scripting" id="optionsButton"> Scripting</button><br>
             <button type="options" name="choice" value="Programming" id="optionsButton"> Programming</button><br>
             <button type="options" name="choice" value="Application" id="optionsButton"> Application</button><br>
             <button type="options" name="choice" value="None of These" id="optionsButton"> None of These</button><br>
-        </form>
+        </form> -->
         <br>
         <!-- <button onclick="submitAnswer()">Submit Answer</button> -->
 
