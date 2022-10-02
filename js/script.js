@@ -113,20 +113,24 @@ function setTime() {
                    //if answer is true total score +1
                    //if answer is wrong total time decrese -15
        //setup a function to show if the answer is correct
-       var submitAnswer = function() {
-           var options = document.getElementsByName('choice');
-           var val = "";
-           for (var i = 0; i < options.length; i++) {
-               if (options[i].clicked) {
-                   val = options[i].ariaValueMax;
-                   break;
-               }
-           }
+
+
+    //    var submitAnswer = function() {
+    //        var options = document.getElementsByName('choice');
+    //        var val = "";
+    //        for (var i = 0; i < options.length; i++) {
+    //            if (options[i].clicked) {
+    //                val = options[i].ariaValueMax;
+    //                break;
+    //            }
+    //        }
  
-           if (val == "answers") {
-               result();
-           }
-       }
+    //        if (val == "answers") {
+    //            result();
+    //        }
+    //    }
+
+
    //if user finish the quiz before time counts to 0
        //*show user "All Done!" on screen
        //*show the final score
@@ -157,92 +161,116 @@ function saveHighscore(event){
 let questions = [
     {
         question:'Javascript is an _______ language?',
-        choices:['Object-Oriented',
-        'Object-Based',
-        'Procedural',
-        'None of the above'],
-        correct: 'Object-Oriented'
+        choice1:'Object-Oriented',
+        choice2:'Object-Based',
+        choice3:'Procedural',
+        choice4:'None of the above',
+        correct: '1'
     },
     {
         question:'Which of the following methods can be used to display data in some form using Javascript?',
-        choices:['document.write()',
-        'console.log()',
-        'window.alert',
-        'All of the above'],
-        correct: 'All of the above'
+        choice1:'document.write()',
+        choice2:'console.log()',
+        choice3:'window.alert',
+        choice4:'All of the above',
+        correct: '4'
     },
     {
         question: 'How can a datatype be declared to be a constant type?',
-        choices:['const',
-        'var',
-        'let',
-        'constant'],
+        choice1:'const',
+        choice2:'var',
+        choice3:'let',
+        choice4:'constant',
         correct: 'const'
     },
     {
         question: 'When an operator’s value is NULL, the typeof returned by the unary operator is:',
-        choices:['Boolean',
-        'Undefined',
-        'Object',
-        'Integer'],
+        choice1:'Boolean',
+        choice2:'Undefined',
+        choice3:'Object',
+        choice4:'Integer',
         correct: 'Object'
     },
     {
         question: 'Which function is used to serialize an object into a JSON string in Javascript?',
-        choices:['stringify()',
-        'parse()',
-        'convert()',
-        'None of the above'],
+        choice1:'stringify()',
+        choice2:'parse()',
+        choice3:'convert()',
+        choice4:'None of the above',
         correct: 'stringify()'
     },
     {
         question: 'The 3 basic object attributes in Javascript are:',
-        choices:['Class, prototype, object\'s parameters',
-        'Class, prototype, object\'s extensible flag',
-        'Class, parameters, object\'s extensible flag',
-        'Classes, Native object, and interfaces and Objext\'s extensible flag'],
+        choice1:'Class, prototype, object\'s parameters',
+        choice2:'Class, prototype, object\'s extensible flag',
+        choice3:'Class, parameters, object\'s extensible flag',
+        choice4:'Classes, Native object, and interfaces and Objext\'s extensible flag',
         correct: 'Class, prototype, object\'s extensible flag'
     },
     {
         question: 'Which of the following are closures in Javascript?',
-        choices:[']Variables',
-        'Functions',
-        'Objects',
-        'All of the above'],
+        choice1:'Variables',
+        choice2:'Functions',
+        choice3:'Objects',
+        choice4:'All of the above',
         correct: 'All of the above'
     },
     {
         question: 'How to stop an interval timer in Javascript?',
-        choices:['clearInterval',
-        'clearTimer',
-        'intervalOver',
-        'None of the above'],
+        choice1:'clearInterval',
+        choice2:'clearTimer',
+        choice3:'intervalOver',
+        choice4:'None of the above',
         correct: 'clearInterval'
     },
     {
         question: 'How do we write a comment in javascript?',
-        choices:['/* */',
-        '//',
-        '#',
-        '$ $'],
+        choice1:'/* */',
+        choice2:'//',
+        choice3:'#',
+        choice4:'$ $',
         correct: '//'
     },
     {
         question: 'Which object in Javascript doesn’t have a prototype?',
-        choices:['Base Object',
-        'All objects have a prototype',
-        'None of the objects have a prototype',
-        'None of the above'],
+        choice1:'Base Object',
+        choice2:'All objects have a prototype',
+        choice3:'None of the objects have a prototype',
+        choice4:'None of the above',
         correct: 'Base Object'
     }
 ]
 
 
+
 let runningQuestion = 0;
+let q = questions[runningQuestion];
+choiceBtn.addEventListener("click", checkAnswer);
+
+function checkAnswer(event) {
+    choiceBtn = event.target;
+    if (choiceValue.matches('.choice')){
+    var choiceValue = choiceBtn.getAttribute('value');
+    console.log(choiceValue)
+    if (choiceValue == "correct") {
+        // secondLeft -= 10;
+        // result.innerHTML = "Wrong!"
+        // runningQuestion++;
+        result.innerHTML = "Correct!"
+        generateQuestion();
+    } else {
+        // secondLeft -= 10;
+        // result.innerHTML = "Wrong!"
+        runningQuestion++;
+        // q++;
+        result.textContent = "Correct!"
+        generateQuestion();
+    }
+    }
+}
 
 function generateQuestion() {
     
-    let q = questions[runningQuestion];
 
     question.innerHTML = "<p>"+ q.question +"</p>";
 
@@ -253,21 +281,7 @@ function generateQuestion() {
     choice3.innerHTML = q.choice3;
 
     choice4.innerHTML = q.choice4;
-
-    // choiceBtn.addEventListener("click", checkAnswer);
-
-    function checkAnswer(event) {
-        choiceBtn = event.target;
-        if (choiceBtn.value != questions[runningQuestion].correct) {
-            secondLeft -= 10;
-            result.innerHTML = "Wrong!"
-        } else {
-            // runningQuestion++;
-            q++;
-            result.innerHTML = "Correct!"
-            generateQuestion();
-        }
-        }
+   
     }
 
 
@@ -283,5 +297,16 @@ function renderProgress(){
 
 
 startBtn.addEventListener("click", start);
-submitEl.addEventListener('click', saveHighscore);
-choiceBtn.onclick = checkAnswer;
+// submitEl.addEventListener('click', saveHighscore);
+// choiceBtn.onclick = checkAnswer;
+
+
+
+// var element = event.target;
+//    if (element.matches(".result")) {
+//        var category = element.getAttribute("value");
+//        console.log(category)
+//        if (category == "correctAnswer") {
+//            element.setAttribute("result", "Correct!")
+//        } else {
+//            element.texContent = "Wrong!"
