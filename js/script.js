@@ -2,6 +2,9 @@
 //declare a string array to store all quiz questions
 //declare a string array to store all answers
 var startBtn = document.querySelector(".start");
+var initial = document.querySelector("initial");
+var submit = localStorage.getItem("submit");
+
 
 // function visibel() {
 //     const div = document.querySelector('div');
@@ -36,13 +39,23 @@ function viewScores() {
 
 
 function allDone() {
-    // timeEl.textContent = " ";
+    timeEl.textContent = "Time: 0";
+    document.getElementById("quiz").className = "hidden";
     document.getElementById("allDone").className = "visible";
-    document.getElementById("quiz").className = "visible";
+    if (initial != null) {
+        initial.textContent = submit;
+    } else {
+        initial.textContent = submit;
+        localStorage.setItem("submit", submit);
+    }
+    
 }
 
-
-function result() {
+document.addEventListener("click", checkResult);
+function checkResult() {
+    // document.getElementById(".result");
+    
+    // result.textContent = "Correct!"
     var element = event.target;
     if (element.matches(".result")) {
         var category = element.getAttribute("value");
