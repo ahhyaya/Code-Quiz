@@ -52,16 +52,7 @@ function allDone() {
   
 }
  
-choiceBtn.addEventListener("click", checkAnswer);
-function checkAnswer(answer) {
-    if (answer != questions[runningQuestion].correct) {
-        secondLeft -= 10;
-        result.innerHTML = "Wrong!"
-    } else if (runningQuestion < question.length - 1) {
-        // runningQuestion++;
-        result.innerHTML = "Correct!"
-        generateQuestion();
-    }
+
    // document.getElementById(".result");
   
    // result.textContent = "Correct!"
@@ -262,6 +253,21 @@ function generateQuestion() {
     choice3.innerHTML = q.choice3;
 
     choice4.innerHTML = q.choice4;
+
+    choiceBtn.addEventListener("click", checkAnswer);
+function checkAnswer(answer) {
+    for (q = 0, q < question.length; q++) {
+    if (answer[q] != questions[runningQuestion].correct) {
+        secondLeft -= 10;
+        result.innerHTML = "Wrong!"
+    } else if (answer[q] === questions[runningQuestion].correct && answer[q] != null) {
+        // runningQuestion++;
+        result.innerHTML = "Correct!"
+        q++;
+        generateQuestion();
+    }
+}
+}
 }
 
 
