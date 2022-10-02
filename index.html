@@ -1,106 +1,110 @@
 <!-- head -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./js/script.js"></script>
+    
     <title>Code Quiz</title>
-  </head>
+</head>
 
 
-    <!-- header with "view high score link and timer" -->
+<!-- header with "view high score link and timer" -->
 
 <!-- body -->
-<body class = "container">
+
+<body class="container">
     <!-- a container -->
 
 
-        <!-- timer -->
-        <header class = "header">
+    <!-- timer -->
+    <header class="header">
 
-        <div><a class ="viewHighScore" style = "text-align: left;">View High Scores</a></div>
-        
-        <a class ="time" style = "text-align: right;"></a>
-        <div id ="timer"></div>
-    <!-- <div type = "time" onclick="setTime()"></div> -->
-    </div>
-        
-        </header>
+        <div><a class="viewHighScore" style="text-align: left;">View High Scores</a></div>
 
-        <!-- 1st page - start -->
-        <div class = "visible" id = "instruction">
+        <p class="time" style="text-align: right;"></p>
+        <div id="timer"></div>
+        <!-- <div type = "time" onclick="setTime()"></div> -->
+        </div>
+
+    </header>
+    
+
+    <!-- 1st page - start -->
+    <div class="visible" id="instruction">
         <!-- h1 for quiz title ID startPage-->
         <div>
-        <h1>Coding quiz challenge</h1>
-        <!-- quiz instractions ID startPage--->
-        <div class = "startPage">
-            <p> Try to answer the folowing code-related questions within the time limit.</p>
-            <p>Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <h1>Coding quiz challenge</h1>
+            <!-- quiz instractions ID startPage--->
+            <div class="startPage">
+                <p> Try to answer the folowing code-related questions within the time limit.</p>
+                <p>Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            </div>
+            <!-- button to start quiz ID startPage--->
+            <button class="start">Start Quiz</button>
         </div>
-        <!-- button to start quiz ID startPage--->
-        <button class = "start">Start Quiz</button>
-        </div>
-         </div>
+    </div>
 
-        <!-- quiz part -->
+    <!-- quiz part -->
 
-            <div class = "hidden" id = "quiz">
-            <h2>JavaScript is ______ Language.</h2><br>
-            <form >
-                <button type="options" name="correctAnswer" value="Scripting" id = "optionsButton"> Scripting</button><br>
-                <button type="options" name="choice" value="Programming" id = "optionsButton"> Programming</button><br>
-                <button type="options" name="choice" value="Application" id = "optionsButton"> Application</button><br>
-                <button type="options" name="choice" value="None of These" id = "optionsButton"> None of These</button><br>
-            </form>
-            <br>
-            <!-- <button onclick="submitAnswer()">Submit Answer</button> -->
-         
-            <!-- h2 for quiz questions ID quiz-->
-            <!-- <h2 class = "questions">questions</h2> -->
-            <!-- 4 buttons with answers ID quiz -->
-            <!-- <button class = "answer">answer1</button><br>
+    <div class="hidden" id="quiz">
+        <h2>JavaScript is ______ Language.</h2><br>
+        <form>
+            <button type="options" name="correctAnswer" value="Scripting" id="optionsButton"> Scripting</button><br>
+            <button type="options" name="choice" value="Programming" id="optionsButton"> Programming</button><br>
+            <button type="options" name="choice" value="Application" id="optionsButton"> Application</button><br>
+            <button type="options" name="choice" value="None of These" id="optionsButton"> None of These</button><br>
+        </form>
+        <br>
+        <!-- <button onclick="submitAnswer()">Submit Answer</button> -->
+
+        <!-- h2 for quiz questions ID quiz-->
+        <!-- <h2 class = "questions">questions</h2> -->
+        <!-- 4 buttons with answers ID quiz -->
+        <!-- <button class = "answer">answer1</button><br>
             <button class = "answer">answer2</button><br>
             <button class = "answer">answer3</button><br>
             <button class = "answer">answer4</button><br> -->
-            <!-- show result on the bottom ID quiz -->
-            <hr>
-            <a class = "result">result</a>
-        </div>
-        
-        <!-- after quiz -->
-        <div class = "hidden" id = "allDone">
-            <!-- h2 for "All done"  ID quziComplete -->
-            <h2 class = "alldone">All done!</h2>
-            <!-- textarea to show final score and input initials ID quziComplete-->
-            <label class = "finalScore" for="score">Your final score is </label><br> 
-            <!-- <input type = "text" id = "score" name = "finalScore">-->
-            <label class = "initial" for="intl">Enter initials:  </label>
-            <input type = "text" id = "userintl" name = "inital">
-            <!-- submit button -->
-            <button class = "submit">Submit</button>
-        </div>      
+        <!-- show result on the bottom ID quiz -->
+        <hr>
+        <a class="result">result</a>
+    </div>
+
+    <!-- after quiz -->
+    <div class="hidden" id="allDone">
+        <!-- h2 for "All done"  ID quziComplete -->
+        <h2 class="alldone">All done!</h2>
+        <!-- textarea to show final score and input initials ID quziComplete-->
+        <label class="finalScore" for="score">Your final score is </label><br>
+        <!-- <input type = "text" id = "score" name = "finalScore">-->
+        <label class="initial" for="intl">Enter initials: </label>
+        <input type="text" id="userintl" name="inital">
+        <!-- submit button -->
+        <button class="submit">Submit</button>
+    </div>
 
 
-        <!-- high score -->
-        <div class = "hidden"  id = "viewHighScore">
-            <!-- h2 "High score" -->
-            <h2 class="highScore">High Scores</h2>
-            <!-- score ares -->
-            <ol>
-                <li class = "userScores">userscore</li>
-                <li class = "userScores">userscore</li>
-                <li class = "userScores">userscore</li>
-                <li class = "userScores">userscore</li>
-                <li class = "userScores">userscore</li>
-            </ol> 
+    <!-- high score -->
+    <div class="hidden" id="viewHighScore">
+        <!-- h2 "High score" -->
+        <h2 class="highScore">High Scores</h2>
+        <!-- score ares -->
+        <ol>
+            <li class="userScores">userscore</li>
+            <li class="userScores">userscore</li>
+            <li class="userScores">userscore</li>
+            <li class="userScores">userscore</li>
+            <li class="userScores">userscore</li>
+        </ol>
 
-            <!-- two button for goback and clear score -->
-            <button class = "highScoreOptions">Go Back</button>
-            <button class = "highScoreOptions">Clear high scores</button>
-        </div>
+        <!-- two button for goback and clear score -->
+        <button class="highScoreOptions">Go Back</button>
+        <button class="highScoreOptions">Clear high scores</button>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
 
-    </body>
 </html>

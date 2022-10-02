@@ -83,7 +83,7 @@ function setTime() {
 }
 
 
-setTime();
+// setTime();
     //when timer hits 0, end quiz
         //show user "All Done!" on screen
         //show the final score 
